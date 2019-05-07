@@ -1,0 +1,32 @@
+img{
+    height:150px;
+    /* width:300px; */
+    transition:margin-left 1s;
+  }
+  
+  div{
+    display:flex;
+    justify-content:flex-start;
+    width:200px;
+    overflow:hidden;
+  }
+  
+  button.red{
+    color:red;
+  }
+  
+  img.first{
+    margin-left:0;
+  }
+  
+  img.second{
+    margin-left:-200px;
+  }
+  
+  img.third{
+    margin-left:-400px;
+  }
+  
+  img.forth{
+    margin-left:-600px;
+  }
