@@ -1,11 +1,85 @@
 # Carousel-or-slide-show
 
 ## 自己用jQuery写的过程
-### 用到的API
+### 用到的jQuery的API
+#### jQuery()
+jQuery()也可以写成$()。  
+返回匹配的元素集合，无论是通过在DOM的基础上传递的参数还是创建一个HTML字符串。  
+接受一个包含一个CSS选择器(包括元素、属性等选择器)的字符串，用于匹配的一组元素。  
+[jQuery()中文官网说明](https://www.jquery123.com/jQuery/)  
+[jQuery的W3C说明](http://www.w3school.com.cn/jquery/jquery_selectors.asp)  
+
+
 #### eq()
 减少匹配元素的集合为指定的索引的哪一个元素。  
 [eq()中文官网说明](https://www.jquery123.com/eq/)  
 [eq()W3C说明](http://www.w3school.com.cn/jquery/jquery_traversing_filtering.asp)
+
+#### .click()
+为 JavaScript 的"click" 事件绑定一个处理器，或者触发元素上的 "click" 事件。
+此代码方式是.click(function(){}),**跟原生JS不同**
+[.click()jQuery中文文档说明](https://www.jquery123.com/click/)  
+[.click()W3C说明](http://www.w3school.com.cn/jquery/jquery_events.asp)
+
+比如代码
+```
+for(let i=0;i<buttons.length;i++){
+  $('button').eq(i).click(function() {
+  img0.removeClass()
+  img0.addClass(imgArray[i])
+  buttons.removeClass('red')
+  $('button').eq(i).addClass('red')
+})
+}
+```
+#### addClass()
+[addClass()的jQuery中文文档说明](https://www.jquery123.com/addClass/)  
+[addClass()的W3C说明](http://www.w3school.com.cn/jquery/jquery_css_classes.asp)
+为每个匹配的元素添加指定的样式类名
+对所有匹配的元素可以一次添加多个用空格隔开的样式类名, 像这样：  
+`$("p").addClass("myClass yourClass");`
+
+这个方法通常和 .removeClass() 一起使用用来切换元素的样式, 像这样：  
+`$('p').removeClass('myClass noClass').addClass('yourClass');`
+
+#### removeClass()
+[removeClass()的jQuery中文文档说明](https://www.jquery123.com/removeClass/)
+[removeClass()的W3C说明](http://www.w3school.com.cn/jquery/jquery_css_classes.asp)
+移除集合中每个匹配元素上一个，多个或全部样式。
+如果一个样式类名作为一个参数,只有这样式类会被从匹配的元素集合中删除，如果没有样式名作为参数，那么所有的样式类将被移除。
+
+从所有匹配的每个元素中同时移除多个用空格隔开的样式类 ，像这样:  
+`$('p').removeClass('myClass yourClass')`
+
+这个方法通常和 .addClass() 一起使用用来切换元素的样式, 像这样：  
+`$('p').removeClass('myClass noClass').addClass('yourClass');`
+
+#### .trigger()
+[.trigger()的jQuery中文文档说明](https://www.jquery123.com/trigger/)  
+[.trigger()的W3C说明](http://www.w3school.com.cn/jquery/event_trigger.asp)  
+根据绑定到匹配元素的给定的事件类型执行所有的处理程序和行为。
+把.trigger('click')放入到一个函数里面，如果该函数执行的时候，那么会自动执行这个click事件.比如下面代码
+```
+for(let i=0;i<buttons.length;i++){
+  $('button').eq(i).click(function() {
+  img0.removeClass()
+  img0.addClass(imgArray[i])
+  buttons.removeClass('red')
+  $('button').eq(i).addClass('red')
+})
+}//这里面有click事件点击之后执行的函数  
+  
+var p=-1
+  var timeId=setInterval(() => {
+    p++;
+    $('button').eq(p%4).trigger('click')//这里会在setInterval里面的函数触发后，接着去触发上面的click函数里面的内容
+    console.log(p,p%4)
+  }, 1000);
+```
+
+### 用到的JS原生的API
+#### set​Interval
+[set​IntervalMDN说明](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/setInterval)  
 
 ### for循环中用let和var的区别
 
@@ -48,7 +122,7 @@ console.log(i)//这里的i会输出0,1,2,3
 ### git查询对比远程和本地仓库内容信息有什么不同(git diff)
 查询**内容**信息有什么不同  
 这里查询的是commit之后的信息的内容有什么不同。  
-解决方法：
+解决方法：  
 `git diff <local branch> <remote>/<remote branch>`  
 `<local branch>本地分支`  
 `<remote>远程仓库名`  
