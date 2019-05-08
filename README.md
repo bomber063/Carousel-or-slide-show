@@ -77,6 +77,8 @@ var p=-1
   }, 1000);
 ```
 
+可以查看[JSbin的代码](https://jsbin.com/waqafufuke/1/edit?html,js,output)，更直观
+
 ### 用到的JS原生的API
 #### set​Interval
 [set​IntervalMDN说明](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/setInterval)  
@@ -118,7 +120,13 @@ console.log(i)//这里的i会输出0,1,2,3
 
 可以点击[jsbin代码](https://jsbin.com/zexiwizace/edit?html,js,output)，可以更直观的测试  
 
+## 修复一个小bug
+由于点击按钮后p的值会一直增加，并且p%4的结果会与i不能保持同步，所以为了保持同步，增加了一句代码，赋值p=i，把p和i保持一致，不然p会一致自动加1，这样就有可能跳过一些图片或者不从点击的图片开始滚动。
+最后的[JSbin代码](https://jsbin.com/zukedogisi/1/edit?html,js,output)
+
+
 ## git方法
+由于传错了一次commit描述，所以搜了一些git的方法来记录  
 ### git查询对比远程和本地仓库内容信息有什么不同(git diff)
 查询**内容**信息有什么不同  
 这里查询的是commit之后的信息的内容有什么不同。  
