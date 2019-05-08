@@ -27,6 +27,7 @@ console.log(i)//这里的i会输出0,1,2,3
 ```
 **var i是函数级变量，4个内部函数都指向了同一个i**  
 #### 用let
+部分代码  
 ```
 for(let i=0;i<buttons.length;i++){
   $('button').eq(i).click(function() {
@@ -40,9 +41,8 @@ console.log(i)//这里的i会输出0,1,2,3
 }
 ```
 **let i 变成块级域（也就是花括号中的块，每进入一次花括号就生成了一个块级域）,所以 4 个内部函数指向了不同的 i**
+可以点击[jsbin代码](https://jsbin.com/zexiwizace/edit?html,js,output)，可以更直观的测试  
 
 
 
-
-[jsbin代码](https://jsbin.com/zexiwizace/edit?html,js,output)
 
