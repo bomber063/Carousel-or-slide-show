@@ -8,6 +8,7 @@ for(let i=0;i<buttons.length;i++){
   img0.addClass(imgArray[i])
   buttons.removeClass('red')
   $('button').eq(i).addClass('red')
+  p=i//增加该段代码，是为了在点击按钮后把p和i保持一致，不然p会一致自动加1，这样就有可能跳过一些图片或者不从点击的图片开始滚动
 })
 }
 
