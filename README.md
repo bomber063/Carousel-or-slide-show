@@ -58,7 +58,7 @@ for(let i=0;i<buttons.length;i++){
 [.trigger()的jQuery中文文档说明](https://www.jquery123.com/trigger/)  
 [.trigger()的W3C说明](http://www.w3school.com.cn/jquery/event_trigger.asp)  
 根据绑定到匹配元素的给定的事件类型执行所有的处理程序和行为。
-把.trigger('click')放入到一个函数里面，如果该函数执行的时候，那么会自动执行这个click事件.比如下面代码
+把.trigger('click')放入到一个函数里面，如果该函数执行的时候，那么会自动执行这个click事件(**也就是帮助人去点击操作**).比如下面代码
 ```
 for(let i=0;i<buttons.length;i++){
   $('button').eq(i).click(function() {
