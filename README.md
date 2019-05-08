@@ -45,17 +45,18 @@ console.log(i)//这里的i会输出0,1,2,3
 可以点击[jsbin代码](https://jsbin.com/zexiwizace/edit?html,js,output)，可以更直观的测试  
 
 ## git方法
-### git查询对比远程和本地仓库内容信息有什么不同
+### git查询对比远程和本地仓库内容信息有什么不同(git diff)
 查询**内容**信息有什么不同  
 这里查询的是commit之后的信息的内容有什么不同。  
-解决方法：git diff <local branch> <remote>/<remote branch>  
-<local branch>本地分支  
-<remote>远程仓库名  
-<remote branch>远程分支  
+解决方法：
+`git diff <local branch> <remote>/<remote branch>`  
+`<local branch>本地分支`  
+`<remote>远程仓库名`  
+`<remote branch>远程分支`  
 如果远程本地仓库分支名字叫做master，远程仓库分支名字叫做master,并且远程的仓库名字一般都是origin（可以通过git remote查询）  
 那么就可以写成git diff master origin/master  
 
-### git 查询对比提交的commit有什么不同
+### git 查询对比提交的commit有什么不同(git log)
 查询**commit**信息有什么不同
 两个分支名字分别为 master和sidebar
 1. 查看 dev 有，而 master 中没有的：  
@@ -63,16 +64,16 @@ console.log(i)//这里的i会输出0,1,2,3
 同理查看 master 中有，而 dev 中没有的内容：  
 `git log master ^sidebar`  
 
-2. 查看 dev 中比 master 中多提交了哪些内容：
-`git log master..sidebar`
+2. 查看 dev 中比 master 中多提交了哪些内容：  
+`git log master..sidebar`  
 
-注意，列出来的是两个点后边（此处即dev）多提交的内容。同理，想知道 master 比 dev 多提交了什么：
+注意，列出来的是两个点后边（此处即dev）多提交的内容。同理，想知道 master 比 dev 多提交了什么：  
 `git log sidebar..master`  
 
 3. 不知道谁提交的多谁提交的少，单纯想知道有什么不一样：
 `git log sidebar...master`  
 
-### 重置
+### 重置(git reset)
 
 **已经推到远程的分支上**，之后发现中间有错误的信息，需要回退进行更改：
 使用重置（reset）会**清除 commit！**
@@ -94,7 +95,7 @@ git 根据所使用选项来判断是**清除**(--hard)、暂存之前 commit �
 * --soft(比如git reset --soft HEAD^)
 * --hard(比如git reset --hard HEAD^)
 
-尽量不要使用--hard方法。因为是清除所有信息。
+**尽量不要使用--hard方法。因为是清除所有信息。**
 如果不写，默认就是--mixed。
 
 使用 git reset 命令将清除当前分支上的 commit。建议在当前 commit 上创建一个分支，以便用作备份。如果出现错误，我可以返回这些 commit.
@@ -113,7 +114,7 @@ git 根据所使用选项来判断是**清除**(--hard)、暂存之前 commit �
 
 `git push --force`
 
-### 还原
+### 还原(git revert)
 `git revert HEAD^`
 这是针对**commit之后**的操作
 当你告诉 git 还原（revert） 具体的 commit 时，git 会执行和 commit 中的**更改完全相反的更改**。我们详细讲解下。
