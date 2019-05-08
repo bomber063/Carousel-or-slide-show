@@ -113,6 +113,19 @@ git 根据所使用选项来判断是**清除**(--hard)、暂存之前 commit �
 
 `git push --force`
 
+### 还原
+`git revert HEAD^`
+这是针对**commit之后**的操作
+当你告诉 git 还原（revert） 具体的 commit 时，git 会执行和 commit 中的**更改完全相反的更改**。我们详细讲解下。
+1. 假设 commit A **添加了一个字符**，如果 git **还原** commit A，那么 git 将创建一个新的 commit，并**删掉该字符**。  
+2. 假设**删掉了一个字符**，那么**还原**该 commit 将把该内容**添加回来**,别忘记也会出现一个新的commit。
+
+说明还原的同时也会针对这次还原提交一个commit。
+
+此命令：
+
+* 将撤消目标 commit 所做出的更改
+* 创建一个新的 commit 来记录这一**还原更改**
 
 
 
