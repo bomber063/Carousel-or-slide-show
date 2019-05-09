@@ -139,12 +139,11 @@ console.log(i)//这里的i会输出0,1,2,3
 `img0.css({ 'margin-left': i * -200 + 'px' })//该部分第12行代码也可以改成6到11行代码`  
 2. 另一种是用函数返回，.css( propertyName, function(index, value) )  
 ```
-    // img0.removeClass()
-    //     img0.css('margin-left', function() {
-    //       let size = i * -200 + 'px'
-    //       console.log(size)
-    //       return size
-    //     })
+         img0.css('margin-left', function() {
+           let size = i * -200 + 'px'
+           console.log(size)
+           return size
+         })
 ```
 这其中犯了一个**很低级的错误**，把margin-left写成了mar**i**gin-left,导致调试了半天晕头转向，可能今天累了吧，哈哈。
 
@@ -152,6 +151,42 @@ console.log(i)//这里的i会输出0,1,2,3
 其中  
 `var size=buttons.length`  
 这样更有利于代码的可维护性。  
+
+### 没有封装函数
+封装了三个函数：  
+1. 激活某张图片  
+```
+function activeImg($img0,i) {
+  $img0.removeClass()
+  $img0.css({'margin-left': i*-200+'px'})
+}
+```
+也可以是  
+```
+function activeImg($img0,i) {
+  $img0.removeClass()
+  $img0.css('margin-left', function() {
+    let size = i * -200 + 'px'
+    console.log(size)
+   return size
+  })
+```
+2. 激活某个按钮  
+```
+function activeButton($button,i) {
+  $button.removeClass('red')
+  $('button').eq(i).addClass('red')
+}
+```
+3. 根据时间间隔自动滚动  
+```
+function setTimer(){
+  return setInterval(() => {
+  p++;
+  $('button').eq(p % size).trigger('click')
+}, 2000);
+}
+```
 
 
 ## git方法
