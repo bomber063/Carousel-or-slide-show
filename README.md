@@ -148,6 +148,11 @@ console.log(i)//这里的i会输出0,1,2,3
 ```
 这其中犯了一个**很低级的错误**，把margin-left写成了mar**i**gin-left,导致调试了半天晕头转向，可能今天累了吧，哈哈。
 
+### eq(p % 4)改成eq(p % size)
+其中  
+`var size=buttons.length`  
+这样更有利于代码的可维护性。  
+
 
 ## git方法
 由于传错了一次commit描述，所以搜了一些git的方法来记录  
