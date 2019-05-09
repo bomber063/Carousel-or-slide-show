@@ -15,7 +15,7 @@ var timeId = setTimer()
 
 function activeImg($img0,i) {
   $img0.removeClass()
-  $img0.css({'margin-left': i*-200+'px'})
+  $img0.css({'margin-left': i*-400+'px'})
 }
 
 function activeButton($button,i) {
