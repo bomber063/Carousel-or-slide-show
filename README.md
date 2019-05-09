@@ -124,6 +124,30 @@ console.log(i)//这里的i会输出0,1,2,3
 由于点击按钮后p的值会一直增加，并且p%4的结果会与i不能保持同步，所以为了保持同步，增加了一句代码，赋值p=i，把p和i保持一致，不然p会一致自动加1，这样就有可能跳过一些图片或者不从点击的图片开始滚动。  
 最后的[JSbin代码](https://jsbin.com/zukedogisi/1/edit?html,js,output)
 
+## CSS用的不多的方法
+[display:flex;](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex)  
+[justify-content:flex-start;](https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content)  
+
+## 经过与方方老师对比后发现不足的地方
+### JQ中使用API——.css()可以节省很多CSS文件的代码
+[.css()的JQ中文文档](https://www.jquery123.com/css/#css2)  
+[.css()的JQ的W3C文档](http://www.w3school.com.cn/jquery/jquery_css.asp)
+获取匹配元素集合中的第一个元素的样式属性的值（**传入一个参数**）  或  设置每个匹配元素的一个或多个CSS属性（**传入两个参数**）。
+
+传入两个参数来设置匹配元素的CSS属性用了两种方法：  
+1. 一种是.css( propertyName, value )  
+`img0.css({ 'margin-left': i * -200 + 'px' })//该部分第12行代码也可以改成6到11行代码`  
+2. 另一种是用函数返回，.css( propertyName, function(index, value) )  
+```
+    // img0.removeClass()
+    //     img0.css('margin-left', function() {
+    //       let size = i * -200 + 'px'
+    //       console.log(size)
+    //       return size
+    //     })
+```
+这其中犯了一个**很低级的错误**，把margin-left写成了mar**i**gin-left,导致调试了半天晕头转向，可能今天累了吧，哈哈。
+
 
 ## git方法
 由于传错了一次commit描述，所以搜了一些git的方法来记录  
