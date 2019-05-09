@@ -187,7 +187,7 @@ function setTimer(){
 }, 2000);
 }
 ```
-###方方老师用的，但是我没有用到的JQ的API
+### 方方老师用的，但是我没有用到的JQ的API
 #### index()
 [index()在JQ中文文档说明](https://www.jquery123.com/index/)  
 [index()在W3C中的说明](http://www.w3school.com.cn/jquery/dom_element_methods_index.asp)  
