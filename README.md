@@ -187,7 +187,22 @@ function setTimer(){
 }, 2000);
 }
 ```
+###方方老师用的，但是我没有用到的JQ的API
+#### index()
+[index()在JQ中文文档说明](https://www.jquery123.com/index/)  
+[index()在W3C中的说明](http://www.w3school.com.cn/jquery/dom_element_methods_index.asp)  
+从匹配的元素中搜索给定元素的索引值，从0开始计数。  
+如果**不传递任何参数**给 .index() 方法，则返回值就是jQuery对象中第一个元素相对于它**同辈元素的位置**。  
+如果在**一组元素**上调用 .index() ，并且参数是一个DOM元素或jQuery对象， .index() 返回值就是**传入的元素相对于原先集合的位置**。  
 
+#### .siblings()
+[.siblings()在JQ中文文档说明](https://www.jquery123.com/siblings/)  
+[.siblings()在W3C中的说明](http://www.w3school.com.cn/jquery/jquery_traversing_siblings.asp)  
+获得匹配元素集合中每个元素的**兄弟元素**,可以提供一个可选的选择器。  
+
+经过处理后最后的代码可以查看[JSbin](https://jsbin.com/yepoqoxasa/1/edit?html,css,output)  
+
+方方老师的代码[JSbin](http://js.jirengu.com/botamiwinu/1/edit?html,js,output)  
 
 ## git方法
 由于传错了一次commit描述，所以搜了一些git的方法来记录  
