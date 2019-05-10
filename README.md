@@ -198,6 +198,19 @@ function setTimer(){
 如果**不传递任何参数**给 .index() 方法，则返回值就是jQuery对象中第一个元素相对于它**同辈元素的位置**。  
 如果在**一组元素**上调用 .index() ，并且参数是一个DOM元素或jQuery对象， .index() 返回值就是**传入的元素相对于原先集合的位置**。  
 
+而如果把这个index()写成远程的DOM的API的形式就需要一堆代码，例如
+看看s在父元素中排行第几
+```
+  var n
+  var children=s.parentNode.children
+  for(let i=0;i<children.length;i++){
+    if(children[i]===s){
+      n=i//如果所有子元素的索引等于需要确定的子元素，那么就可以把它的索引赋值给n，这个n就是排行第几
+      break;
+    }
+  }
+```
+
 #### .siblings()
 [.siblings()在JQ中文文档说明](https://www.jquery123.com/siblings/)  
 [.siblings()在w3school中的说明](http://www.w3school.com.cn/jquery/jquery_traversing_siblings.asp)  
@@ -217,11 +230,11 @@ function setTimer(){
 代码修改为[jsbin预览](https://jsbin.com/wobabiruhi/1/edit?html,js,output)  
 
 ## 没有考虑重排问题
-由于<img>是一个[可替换元素](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Replaced_element),可替换元素（replaced element）的展现效果不是由 CSS 来控制的。这些元素是一种外部对象，它们外观的渲染，是独立于 CSS 的。  
-用这里的<img>举例子就是，在图片下载下来之前，页面不知道这个图片是什么样子，比如不知道宽高是多少，这样这个元素就会先做一个占位符来占位。等图片下载下来之后就会把下载的图片替换这个占位符，一般是没有图片或者图片错误就会显示这个占位符。这里的占位符可以用[alt属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)来控制。  
-所以当占位符的宽高和下载的图片宽高不一致的时候，就会导致**重排**，也就是占位符的宽高使得图片已经排列好了，如果下载图片后发现宽高和占位符的不一样，这样就会导致**重新再排列一次**，该占位符后面的图片都会往后退或者往前靠，这个跟以前博客说道的内存一样，如果导致重排会特别浪费性能，会耗CPU，多渲染一次。    
-页面性能优化的其中一个注意点就是，如果已经知道可替换元素，比如图片的宽高，最好把宽高都写出来，这样浏览器就不会触发重排，也就是不会让后面的图片让位的过程。   
-如果不知道下载后的图片大小，那么只能影响性能触发重排，耗费CPU了，多渲染一次。   
+* 由于<img>是一个[可替换元素](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Replaced_element),可替换元素（replaced element）的展现效果不是由 CSS 来控制的。这些元素是一种外部对象，它们外观的渲染，是独立于 CSS 的。  
+* 用这里的<img>举例子就是，在图片下载下来之前，页面不知道这个图片是什么样子，比如不知道宽高是多少，这样这个元素就会先做一个占位符来占位。等图片下载下来之后就会把下载的图片替换这个占位符，一般是没有图片或者图片错误就会显示这个占位符。这里的占位符可以用[alt属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)来控制。  
+* 所以当占位符的宽高和下载的图片宽高不一致的时候，就会导致**重排**，也就是占位符的宽高使得图片已经排列好了，如果下载图片后发现宽高和占位符的不一样，这样就会导致**重新再排列一次**，该占位符后面的图片都会往后退或者往前靠，这个跟以前博客说道的内存一样，如果导致重排会特别浪费性能，会耗CPU，多渲染一次。    
+* 页面性能优化的其中一个注意点就是，如果已经知道可替换元素，比如图片的宽高，最好把宽高都写出来，这样浏览器就不会触发重排，也就是不会让后面的图片让位的过程。   
+* 如果不知道下载后的图片大小，那么只能影响性能触发重排，耗费CPU了，多渲染一次。   
 
 经过处理后最后的代码(margin-left实现的)可以查看[JSbin](https://jsbin.com/yepoqoxasa/1/edit?html,css,output)  
 
