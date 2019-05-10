@@ -7,19 +7,19 @@ jQuery()也可以写成$()。
 返回匹配的元素集合，无论是通过在DOM的基础上传递的参数还是创建一个HTML字符串。  
 接受一个包含一个CSS选择器(包括元素、属性等选择器)的字符串，用于匹配的一组元素。  
 [jQuery()中文官网说明](https://www.jquery123.com/jQuery/)  
-[jQuery的W3C说明](http://www.w3school.com.cn/jquery/jquery_selectors.asp)  
+[jQuery的w3school说明](http://www.w3school.com.cn/jquery/jquery_selectors.asp)  
 
 
 #### eq()
 减少匹配元素的集合为指定的索引的哪一个元素。  
 [eq()中文官网说明](https://www.jquery123.com/eq/)  
-[eq()W3C说明](http://www.w3school.com.cn/jquery/jquery_traversing_filtering.asp)
+[eq()w3school说明](http://www.w3school.com.cn/jquery/jquery_traversing_filtering.asp)
 
 #### .click()
 为 JavaScript 的"click" 事件绑定一个处理器，或者触发元素上的 "click" 事件。
 此代码方式是.click(function(){}),**跟原生JS不同**
 [.click()jQuery中文文档说明](https://www.jquery123.com/click/)  
-[.click()W3C说明](http://www.w3school.com.cn/jquery/jquery_events.asp)
+[.click()在w3school说明](http://www.w3school.com.cn/jquery/jquery_events.asp)
 
 比如代码
 ```
@@ -34,7 +34,7 @@ for(let i=0;i<buttons.length;i++){
 ```
 #### addClass()
 [addClass()的jQuery中文文档说明](https://www.jquery123.com/addClass/)  
-[addClass()的W3C说明](http://www.w3school.com.cn/jquery/jquery_css_classes.asp)
+[addClass()的w3school说明](http://www.w3school.com.cn/jquery/jquery_css_classes.asp)
 为每个匹配的元素添加指定的样式类名
 对所有匹配的元素可以一次添加多个用空格隔开的样式类名, 像这样：  
 `$("p").addClass("myClass yourClass");`
@@ -44,7 +44,7 @@ for(let i=0;i<buttons.length;i++){
 
 #### removeClass()
 [removeClass()的jQuery中文文档说明](https://www.jquery123.com/removeClass/)
-[removeClass()的W3C说明](http://www.w3school.com.cn/jquery/jquery_css_classes.asp)
+[removeClass()的w3school说明](http://www.w3school.com.cn/jquery/jquery_css_classes.asp)
 移除集合中每个匹配元素上一个，多个或全部样式。
 如果一个样式类名作为一个参数,只有这样式类会被从匹配的元素集合中删除，如果没有样式名作为参数，那么所有的样式类将被移除。
 
@@ -56,7 +56,7 @@ for(let i=0;i<buttons.length;i++){
 
 #### .trigger()
 [.trigger()的jQuery中文文档说明](https://www.jquery123.com/trigger/)  
-[.trigger()的W3C说明](http://www.w3school.com.cn/jquery/event_trigger.asp)  
+[.trigger()的w3school说明](http://www.w3school.com.cn/jquery/event_trigger.asp)  
 根据绑定到匹配元素的给定的事件类型执行所有的处理程序和行为。
 把.trigger('click')放入到一个函数里面，如果该函数执行的时候，那么会自动执行这个click事件(**也就是帮助人去点击操作**).比如下面代码
 ```
@@ -134,7 +134,7 @@ console.log(i)//这里的i会输出0,1,2,3
 ## 经过与方方老师对比后发现不足的地方
 ### JQ中使用API——.css()可以节省很多CSS文件的代码
 [.css()的JQ中文文档](https://www.jquery123.com/css/#css2)  
-[.css()的JQ的W3C文档](http://www.w3school.com.cn/jquery/jquery_css.asp)
+[.css()的JQ的w3school文档](http://www.w3school.com.cn/jquery/jquery_css.asp)
 获取匹配元素集合中的第一个元素的样式属性的值（**传入一个参数**）  或  设置每个匹配元素的一个或多个CSS属性（**传入两个参数**）。
 
 传入两个参数来设置匹配元素的CSS属性用了两种方法：  
@@ -193,15 +193,21 @@ function setTimer(){
 ### 方方老师用的，但是我没有用到的JQ的API
 #### index()
 [index()在JQ中文文档说明](https://www.jquery123.com/index/)  
-[index()在W3C中的说明](http://www.w3school.com.cn/jquery/dom_element_methods_index.asp)  
+[index()在w3school中的说明](http://www.w3school.com.cn/jquery/dom_element_methods_index.asp)  
 从匹配的元素中搜索给定元素的索引值，从0开始计数。  
 如果**不传递任何参数**给 .index() 方法，则返回值就是jQuery对象中第一个元素相对于它**同辈元素的位置**。  
 如果在**一组元素**上调用 .index() ，并且参数是一个DOM元素或jQuery对象， .index() 返回值就是**传入的元素相对于原先集合的位置**。  
 
 #### .siblings()
 [.siblings()在JQ中文文档说明](https://www.jquery123.com/siblings/)  
-[.siblings()在W3C中的说明](http://www.w3school.com.cn/jquery/jquery_traversing_siblings.asp)  
+[.siblings()在w3school中的说明](http://www.w3school.com.cn/jquery/jquery_traversing_siblings.asp)  
 获得匹配元素集合中每个元素的**兄弟元素**,可以提供一个可选的选择器。  
+
+#### on()
+在选定的元素上绑定一个或多个事件处理函数。
+[.on()的JQ中文文档说明](https://www.jquery123.com/on/)  
+[.on()W3School说明](http://www.w3school.com.cn/jquerymobile/jquerymobile_events_touch.asp)  
+[.on()W3cSclool说明](https://www.w3cschool.cn/jquery/event-on.html)  
 
 经过处理后最后的代码可以查看[JSbin](https://jsbin.com/yepoqoxasa/1/edit?html,css,output)  
 
@@ -301,6 +307,11 @@ git 根据所使用选项来判断是**清除**(--hard)、暂存之前 commit �
 
 [还有一个小练习预览](https://fangyinghang.com/google_doodle_clone/2013-4-29/index.html)  
 [代码地址](https://github.com/FrankFang/google_doodle_clone)  
+
+[JQ在W3Cschool的学习地址](https://www.w3cschool.cn/jquery/?)  
+[JQ在W3school的学习地址](http://www.w3school.com.cn/jquery/index.asp)  
+[JQ官方中文版](https://www.jquery123.com/)  
+[JQ官方英文版](https://jquery.com/)  
 
 
 
