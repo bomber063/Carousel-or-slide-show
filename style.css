@@ -1,6 +1,7 @@
 img{
     height:300px;
-    /* width:300px; */
+    width:400px;
+    /* 因为已经知道了可替换元素img这个里面图片的宽高，就可以直接写出来，防止触发重排 */
     transition:margin-left 1s;
   }
   
