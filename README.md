@@ -204,10 +204,19 @@ function setTimer(){
 获得匹配元素集合中每个元素的**兄弟元素**,可以提供一个可选的选择器。  
 
 #### on()
-在选定的元素上绑定一个或多个事件处理函数。
+在选定的元素上绑定一个或多个事件处理函数。  
 [.on()的JQ中文文档说明](https://www.jquery123.com/on/)  
 [.on()W3School说明](http://www.w3school.com.cn/jquerymobile/jquerymobile_events_touch.asp)  
 [.on()W3cSclool说明](https://www.w3cschool.cn/jquery/event-on.html)  
+
+#### transform:translate()ortransform:translateX()
+方方老师用的是.css(transform:translate())  
+视频中测试的显示浏览器放大的时候，用该CSS属性滚动的时候会抖动，但是我自己测试了没有发现抖动，可能环境不太一样吧。  
+
+我的代码如果改成transform:translate()就需要调整整个img图片，而不是第一个张img图片
+代码修改为[jsbin预览](https://jsbin.com/wobabiruhi/1/edit?html,js,output)  
+
+
 
 经过处理后最后的代码可以查看[JSbin](https://jsbin.com/yepoqoxasa/1/edit?html,css,output)  
 
