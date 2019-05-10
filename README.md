@@ -55,6 +55,7 @@ for(let i=0;i<buttons.length;i++){
 `$('p').removeClass('myClass noClass').addClass('yourClass');`
 
 #### .trigger()
+trigger()的括号里面可以加入任何JQ事件，功能很强大。  
 [.trigger()的jQuery中文文档说明](https://www.jquery123.com/trigger/)  
 [.trigger()的w3school说明](http://www.w3school.com.cn/jquery/event_trigger.asp)  
 根据绑定到匹配元素的给定的事件类型执行所有的处理程序和行为。
