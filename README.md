@@ -128,8 +128,8 @@ console.log(i)//这里的i会输出0,1,2,3
 [display:flex;](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex)  
 [justify-content:flex-start;](https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content)  
 
-发现不用justify-content:flex-start也不影响效果。
-另外发现方方的代码这里用的是[align-items:flex-start](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-items)，并且删除掉也不影响效果。
+发现不用justify-content:flex-start也不影响效果。  
+另外发现方方的代码这里用的是[align-items:flex-start](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-items)，并且删除掉也不影响效果。  
 
 ## 经过与方方老师对比后发现不足的地方
 ### JQ中使用API——.css()可以节省很多CSS文件的代码
