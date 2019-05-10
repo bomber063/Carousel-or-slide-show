@@ -289,6 +289,15 @@ git 根据所使用选项来判断是**清除**(--hard)、暂存之前 commit �
 * 将撤消目标 commit 所做出的更改
 * 创建一个新的 commit 来记录这一**还原更改**
 
+## 拓展
+[苹果风格的轮播](https://jscode.me/t/topic/761)——[跳转页面](https://demo.tutorialzine.com/2009/11/beautiful-apple-gallery-slideshow/demo.html)  
+[科技感十足的轮播](https://jscode.me/t/topic/762)——[跳转页面](http://idangero.us/swiper/)  
+[可能是最厉害的轮播组件](https://jscode.me/t/topic/763)——[跳转页面](http://idangero.us/swiper/demos/)——[github页面](https://github.com/bomber063/swiper)  
+
+[仅用CSS实现的轮播](https://jscode.me/t/css/718),不过图片已经没了。  
+
+[还有一个小练习预览](https://fangyinghang.com/google_doodle_clone/2013-4-29/index.html)  
+[代码地址](https://github.com/FrankFang/google_doodle_clone)  
 
 
 
